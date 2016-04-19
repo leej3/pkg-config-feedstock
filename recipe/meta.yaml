@@ -1,10 +1,13 @@
+{% set version = "0.28" %}
+
 package:
   name: pkg-config
-  version: 0.28
+  version: {{ version }}
 
 source:
-  fn: pkg-config-0.28.zip
-  url: https://github.com/tpn/pkg-config/archive/pkg-config-0.28.zip
+  fn: pkg-config-{{ version }}.zip
+  url: https://github.com/tpn/pkg-config/archive/pkg-config-{{ version }}.zip
+  sha256: 81ec7beea5856664ecfe0f80c9ab3a87b1baf8a9b90cdf166a3d506c172a332e
 
 build:
   skip: True  # [win]
