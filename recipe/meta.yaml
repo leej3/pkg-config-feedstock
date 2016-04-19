@@ -8,18 +8,18 @@ source:
 
 build:
   skip: True  # [win]
-  number: 0
+  number: 1
   detect_binary_files_with_prefix: true
 
 requirements:
   build:
-    - zlib
+    - zlib 1.2*
     - autoconf
     - python
     - automake
     - libtool
   run:
-    - zlib
+    - zlib 1.2*
 
 test:
   commands:
