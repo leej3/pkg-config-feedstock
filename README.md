@@ -73,6 +73,11 @@ Linux: [![Circle CI](https://circleci.com/gh/conda-forge/pkg-config-feedstock.sv
 OSX: [![TravisCI](https://travis-ci.org/conda-forge/pkg-config-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/pkg-config-feedstock) 
 Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/pkg-config-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/pkg-config-feedstock/branch/master)
 
+Current release info
+====================
+Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/pkg-config/badges/version.svg)](https://anaconda.org/conda-forge/pkg-config)
+Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/pkg-config/badges/downloads.svg)](https://anaconda.org/conda-forge/pkg-config)
+
 
 Updating pkg-config-feedstock
 =============================
