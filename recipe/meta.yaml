@@ -17,10 +17,8 @@ build:
 requirements:
   build:
     - zlib 1.2*
-    - autoconf
     - python
     - automake
-    - libtool
   run:
     - zlib 1.2*
 
