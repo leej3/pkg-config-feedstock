@@ -1,6 +1,7 @@
 #!/bin/sh
 
-./configure --prefix=${PREFIX}   \
+./configure --prefix=${PREFIX}    \
+            --host=${HOST}        \
             --with-internal-glib
 
 make
