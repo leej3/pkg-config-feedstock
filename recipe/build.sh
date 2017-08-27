@@ -4,5 +4,5 @@
             --host=${HOST}        \
             --with-internal-glib
 
-make
+make -j${CPU_COUNT} ${VERBOSE_AT}
 make install
