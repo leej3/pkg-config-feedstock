@@ -34,6 +34,13 @@ about:
   home: http://www.freedesktop.org/wiki/Software/pkg-config/
   license: GPL 2
   summary: Interface for querying installed libraries for use during compilation.
+  
+  description: |
+    pkg-config is a script to make putting together all the build
+    flags when compiling/linking a lot easier.
+  doc_url: https://people.freedesktop.org/~dbn/pkg-config-guide.html
+  dev_url: https://cgit.freedesktop.org/pkg-config
+  doc_source_url: 
 
 extra:
   recipe-maintainers:
