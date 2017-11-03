@@ -5,27 +5,28 @@ package:
   version: {{ version }}
 
 source:
-  fn: pkg-config-{{ version }}.tar.gz
   url: https://pkg-config.freedesktop.org/releases/pkg-config-{{ version }}.tar.gz
   sha256: beb43c9e064555469bd4390dcfd8030b1536e0aa103f08d7abf7ae8cac0cb001
 
 build:
+  number: 2
   skip: True  # [win]
-  number: 1
   detect_binary_files_with_prefix: true
 
 requirements:
   build:
-    - zlib 1.2*
     - python
     - automake
+    - zlib 1.2.11
   run:
-    - zlib 1.2*
+    - zlib 1.2.11
 
 test:
   commands:
     - pkg-config --help
     - '[ "$(pkg-config freetype2 --cflags)" == "-I$PREFIX/include/freetype2" ]'
+    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
+    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
 
   requires:
     - freetype
