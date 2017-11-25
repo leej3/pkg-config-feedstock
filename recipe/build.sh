@@ -1,5 +1,7 @@
 #!/bin/sh
 
+mkdir -p ${PREFIX}/include
+
 ./configure --prefix=${PREFIX}    \
             --host=${HOST}        \
             --with-internal-glib
