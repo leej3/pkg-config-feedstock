@@ -15,20 +15,9 @@ build:
   detect_binary_files_with_prefix: True
 
 requirements:
-  host:
-    - {{ compiler('c') }}
   build:
+    - {{ compiler('c') }}
     - automake
-
-# TODO :: Add this back once we have freetype2 working (if it does not lead to
-#         a dependency cycle).
-# test:
-#   commands:
-#     - pkg-config --help
-#     - '[ "$(pkg-config freetype2 --cflags)" == "-I$PREFIX/include/freetype2" ]'
-#
-#   requires:
-#     - freetype
 
 about:
   home: http://www.freedesktop.org/wiki/Software/pkg-config/
