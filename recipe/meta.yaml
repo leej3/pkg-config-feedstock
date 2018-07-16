@@ -9,24 +9,24 @@ source:
   sha256: 6fc69c01688c9458a57eb9a1664c9aba372ccda420a02bf4429fe610e7e7d591
 
 build:
-  number: 1
+  number: 2
   skip: True  # [win]
   detect_binary_files_with_prefix: true
 
 requirements:
   build:
+    - {{ compiler("c") }}
     - python
     - automake
-    - zlib 1.2.11
+  host:
+    - zlib
   run:
-    - zlib 1.2.11
+    - zlib
 
 test:
   commands:
     - pkg-config --help
     - '[ "$(pkg-config freetype2 --cflags)" == "-I$PREFIX/include/freetype2" ]'
-    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
-    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
 
   requires:
     - freetype
