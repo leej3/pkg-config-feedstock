@@ -17,6 +17,7 @@ requirements:
   build:
     - python
     - automake
+  host:
     - zlib 1.2.11
   run:
     - zlib 1.2.11
