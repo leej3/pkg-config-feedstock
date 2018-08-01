@@ -9,6 +9,8 @@ Feedstock license: BSD 3-Clause
 
 Summary: Interface for querying installed libraries for use during compilation.
 
+pkg-config is a script to make putting together all the build
+flags when compiling/linking a lot easier.
 
 
 Current build status
