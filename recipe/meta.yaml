@@ -9,27 +9,20 @@ source:
   sha256: 6fc69c01688c9458a57eb9a1664c9aba372ccda420a02bf4429fe610e7e7d591
 
 build:
-  number: 2
+  number: 3
   skip: True  # [win]
-  detect_binary_files_with_prefix: true
+  detect_binary_files_with_prefix: True
 
 requirements:
   build:
-    - {{ compiler("c") }}
-    - python
+    - {{ compiler('c') }}
     - automake
   host:
-    - zlib
-  run:
-    - zlib
+    - libiconv  # [osx]
 
 test:
   commands:
     - pkg-config --help
-    - '[ "$(pkg-config freetype2 --cflags)" == "-I$PREFIX/include/freetype2" ]'
-
-  requires:
-    - freetype
 
 about:
   home: http://www.freedesktop.org/wiki/Software/pkg-config/
@@ -37,9 +30,17 @@ about:
   license_file: COPYING
   summary: Interface for querying installed libraries for use during compilation.
 
+  description: |
+    pkg-config is a script to make putting together all the build
+    flags when compiling/linking a lot easier.
+  doc_url: https://people.freedesktop.org/~dbn/pkg-config-guide.html
+  dev_url: https://cgit.freedesktop.org/pkg-config
+  doc_source_url:
+
 extra:
   recipe-maintainers:
     - jakirkham
     - mdboom
     - ocefpaf
     - tacaswell
+    - mingwandroid
