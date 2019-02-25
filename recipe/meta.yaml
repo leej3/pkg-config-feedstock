@@ -18,6 +18,7 @@ requirements:
     - automake  # [unix]
     - make  # [unix]
   host:
+    - glib  # [win]
     - libiconv  # [osx]
 
 test:
