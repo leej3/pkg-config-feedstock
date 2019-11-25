@@ -32,7 +32,7 @@ function _run_pkg_config() {
     # get precedence over PREFIX (pkg_config_pc_path). We never want that.
     # Instead pass PKG_CONFIG_LIBDIR as PC_PATH:SYSROOT and allow the user
     # to take precedence over all that iff PKG_CONFIG_PATH is set.
-    if [[ ${HOST} =~ .*x86_64.* ]]; then
+    if [[ ${HOST} =~ .*x86_64.* ]] || [[ ${HOST} =~ .*powerpc64le.* ]] || [[ ${HOST} =~ .*aarch64.* ]]; then
       SRLIBDIR=lib64
     else
       SRLIBDIR=lib
