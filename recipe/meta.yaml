@@ -28,7 +28,7 @@ test:
 
 about:
   home: http://www.freedesktop.org/wiki/Software/pkg-config/
-  license: GPL 2
+  license: GPL-2.0-or-later
   license_file: COPYING
   summary: Interface for querying installed libraries for use during compilation.
 
