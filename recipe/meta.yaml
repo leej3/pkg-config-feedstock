@@ -9,7 +9,7 @@ source:
   sha256: 6fc69c01688c9458a57eb9a1664c9aba372ccda420a02bf4429fe610e7e7d591
 
 build:
-  number: 1006
+  number: 1007
   skip: True  # [win and vc<14]
   detect_binary_files_with_prefix: True
 
@@ -28,7 +28,7 @@ test:
 
 about:
   home: http://www.freedesktop.org/wiki/Software/pkg-config/
-  license: GPL 2
+  license: GPL-2.0-or-later
   license_file: COPYING
   summary: Interface for querying installed libraries for use during compilation.
 
