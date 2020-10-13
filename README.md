@@ -3,7 +3,7 @@ About pkg-config
 
 Home: http://www.freedesktop.org/wiki/Software/pkg-config/
 
-Package license: GPL 2
+Package license: GPL-2.0-or-later
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pkg-config-feedstock/blob/master/LICENSE.txt)
 
