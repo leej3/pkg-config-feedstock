@@ -5,7 +5,7 @@ cp $BUILD_PREFIX/share/libtool/build-aux/config.* .
 
 mkdir -p ${PREFIX}/include
 
-export GLIB_CFLAGS="-I${PREFIX}/include"
+export GLIB_CFLAGS="-I${PREFIX}/include/glib-2.0"
 export GLIB_LIBS="${PREFIX}/lib/libglib-2.0.a"
 
 ./configure --prefix=${PREFIX}    \
