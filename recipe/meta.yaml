@@ -13,8 +13,8 @@ build:
   skip: True  # [win and vc<14]
   detect_binary_files_with_prefix: True
   ignore_run_exports:
-    - glib
-    - libglib
+    - glib      # [unix]
+    - libglib   # [unix]
 
 requirements:
   build:
