@@ -10,7 +10,7 @@ GLIB_LIBS="${PREFIX}/lib/libglib-2.0.a"
 
 ./configure --prefix=${PREFIX}    \
             --host=${HOST}        \
-            --without-internal-glib
+            --without-internal-glib || (cat config.log; false)
 
 make -j${CPU_COUNT} ${VERBOSE_AT}
 make install
