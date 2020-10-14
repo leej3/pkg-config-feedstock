@@ -5,6 +5,9 @@ cp $BUILD_PREFIX/share/libtool/build-aux/config.* .
 
 mkdir -p ${PREFIX}/include
 
+GLIB_CFLAGS="-I${PREFIX}/include"
+GLIB_LIBS="${PREFIX}/lib/libglib-2.0.a"
+
 ./configure --prefix=${PREFIX}    \
             --host=${HOST}        \
             --without-internal-glib
