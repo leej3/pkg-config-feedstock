@@ -20,7 +20,9 @@ requirements:
     - automake  # [unix]
     - make  # [unix]
   host:
-    - glib
+    # To avoid a cyclic dependency when building, we avoid glib when not cross-compiling
+    # This assumes that both pkg-config and glib are cross-compiled or neither is
+    - glib  # [win or (build_platform!=target_platform)]
     - libiconv  # [osx]
 
 test:

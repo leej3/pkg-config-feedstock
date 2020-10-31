@@ -5,12 +5,17 @@ cp $BUILD_PREFIX/share/libtool/build-aux/config.* .
 
 mkdir -p ${PREFIX}/include
 
-export GLIB_CFLAGS="-I${PREFIX}/include/glib-2.0 -I${PREFIX}/lib/glib-2.0/include"
-export GLIB_LIBS="-L${PREFIX}/lib -lglib-2.0"
-
-./configure --prefix=${PREFIX}    \
-            --host=${HOST}        \
-            --without-internal-glib || (cat config.log; false)
+if [[ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]]; then
+  export GLIB_CFLAGS="-I${PREFIX}/include/glib-2.0 -I${PREFIX}/lib/glib-2.0/include"
+  export GLIB_LIBS="-L${PREFIX}/lib -lglib-2.0"
+  ./configure --prefix=${PREFIX}    \
+              --host=${HOST}        \
+              --without-internal-glib || (cat config.log; false)
+else
+  ./configure --prefix=${PREFIX}    \
+              --host=${HOST}        \
+              --with-internal-glib || (cat config.log; false)
+fi
 
 make -j${CPU_COUNT} ${VERBOSE_AT}
 make install
