@@ -9,14 +9,24 @@ source:
   sha256: 6fc69c01688c9458a57eb9a1664c9aba372ccda420a02bf4429fe610e7e7d591
 
 build:
+{% if bootstrapping == 'yes' %}
+  # Please increment by two
+  number: 0
+  string: h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}_bootstrapping
+{% else %}
+  # Keep above the number of the _bootstrapping package
   number: 1008
+{% endif %}
   skip: True  # [win and vc<14]
   detect_binary_files_with_prefix: True
+  script_env:
+    - BOOTSTRAPPING={{ bootstrapping }}
 
 requirements:
   build:
-    - libtool  # [unix]
     - {{ compiler('c') }}
+{% if bootstrapping != 'yes' %}
+    - libtool  # [unix]
     - automake  # [unix]
     - make  # [unix]
   host:
@@ -24,6 +34,7 @@ requirements:
     # This assumes that both pkg-config and glib are cross-compiled or neither is
     - glib  # [win or (build_platform != target_platform)]
     - libiconv  # [osx]
+{% endif %}
 
 test:
   commands:
